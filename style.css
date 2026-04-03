@@ -1,0 +1,282 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsla(66, 46%, 64%, 0.792);
+}
+.app{
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: hsla(0, 0%, 0%, 0.852);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.201);
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+}
+#input-form{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#search-input{
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid hsl(60, 85%, 40%);
+    border-radius: 10px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+#search-input:focus{
+    outline: none;
+    border-color: hsl(59, 86%, 47%);
+    box-shadow: 0 0 6px hsla(65, 97%, 46%, 0.801),0 0 14px hsla(127, 100%, 39%, 0.35), inset 0 0 6px hsla(127, 100%, 39%, 0.25);        ;
+}
+#input-form button{
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: hsla(64, 95%, 45%, 0.964);
+    color: hsl(180, 1%, 24%);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#input-form button:hover{
+    background-color: hsla(64, 95%, 45%, 0.764);
+    color: black;
+}
+#input-form button:active{
+    background-color:hsla(64, 95%, 45%, 0.964);
+    color: hsl(180, 1%, 24%);
+    transform: scale(0.98);
+}
+#status{
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: hsla(180, 100%, 97%, 0.825);
+}
+#movie-list{
+    list-style: none;
+}
+#movie-list li{
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 212, 212, 0.519);;
+}
+#movie-list img{
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px hsla(0, 9%, 89%, 0.341);
+}
+.movie-item img , .poster-placeholder{
+    transition: transform 0.25s ease, box-shadow 0.25s ease ,filter 0.25s ease;
+    filter: blur(0);
+}
+.movie-item img:hover , .movie-item .poster-placeholder:hover{
+    transform: translateY(-2px) scale(1.3);
+    box-shadow: 0 8px 20px rgba(177, 177, 177, 0.35);
+    filter: blur(0);
+}
+#movie-list:hover .movie-item img:not(:hover) , #movie-list:hover .movie-item .poster-placeholder:not(:hover){
+    filter: blur(2px);
+    
+}
+.movie-item img:hover , .movie-item .poster-placeholder:hover{
+    filter: blur(0);
+
+}
+#movie-list h3{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: hsl(0, 8%, 83%);
+}
+#movie-list p{
+    font-size: 1rem;
+    color: #333;
+}
+.poster-placeholder {
+    width: 60px;
+    height: 90px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #333;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4px;
+    flex-shrink: 0;
+}
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#modal-overlay{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.25s ease;
+    z-index: 1000;
+}
+#modal-overlay.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+.modal{
+    max-width: 500px;
+    width: 90%;
+    background-color: hsla(0, 0%, 100%, 0.742);
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    transform: translateY(20px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease ;
+    
+}
+#modal-overlay:not(.hidden) .modal {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+#close-modal{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    filter: saturate(0.85);
+    font-size: 1.12rem;
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+
+}
+#sort-filter{
+    align-self: flex-end;
+    min-width: 180px;
+}
+@media (max-width: 480px) {
+  .app {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #input-form {
+    flex-direction: column;
+  }
+
+  #input-form button {
+    width: 100%;
+    padding: 12px;
+  }
+  #sort-filter {
+    width: 100%;
+    padding: 12px;
+  }
+
+  #movie-list li {
+    gap: 10px;
+  }
+
+  #movie-list img,
+  .poster-placeholder {
+    width: 50px;
+    height: auto;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 15px;
+  }
+
+}
+@media(hover: none){
+    #movie-list:hover .movie-item img:not(:hover),
+    #movie-list:hover .movie-item .poster-placeholder:not(:hover) {
+        filter: none;
+    }
+}
+#sort-filter {
+  appearance: none;           /* removes default arrow (most browsers) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: hsl(56, 46%, 18%);
+  color: #e7e7e7;
+
+  padding: 12px 40px 12px 14px;
+  border-radius: 12px;
+  border: 2px solid hsl(62, 40%, 28%);
+
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+  margin-bottom: 15px;
+}
+#sort-filter:hover{
+    background-color: hsl(65, 45%, 28%);
+}
+#sort-filter:focus{
+   background-color: hsl(71, 45%, 28%);
+   outline: none;
+   border-color: hsl(62, 100%, 39%);
+   box-shadow: 0 0 6px hsla(56, 100%, 39%, 0.6),
+               0 0 14px hsla(71, 100%, 39%, 0.35); ;
+}
+
+#pagination{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.pageButtons{
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    height: 55px;
+    border: none;
+    border-radius: 27.5px;
+    text-align: center;
+    background-color: hsla(64, 44%, 53%, 0.944);
+    color: hsl(180, 1%, 24%);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.pageButtons:hover{
+    background-color: hsla(64, 44%, 53%, 0.744);
+     color: hsl(180, 1%, 14%);
+}
+.pageButtons:active{
+   background-color: hsla(64, 44%, 53%, 0.944);
+    color: hsl(180, 1%, 24%);
+}
+#pagination span{
+    color: rgba(255, 255, 255, 0.671);
+}
