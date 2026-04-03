@@ -18,8 +18,15 @@ HTML5
 CSS3
 JavaScript (Vanilla JS)
 OMDb API
+📸 Screenshots
 
+Add screenshots here (recommended)
 
+Example:
+
+![Home](./screenshots/home.png)
+![Results](./screenshots/results.png)
+![Modal](./screenshots/modal.png)
 ⚙️ Setup & Usage
 Clone the repository:
 git clone https://github.com/YOUR_USERNAME/cine-search.git
@@ -55,5 +62,5 @@ This project is open-source and available under the MIT License.
 
 💡 Author
 
-Built by Yuvraj Sabale
+Built by [Your Name]
 🚀 Learning frontend development step by step
