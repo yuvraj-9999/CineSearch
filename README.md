@@ -3,6 +3,7 @@
 A responsive movie search web application powered by the OMDb API that allows users to search, sort, and explore movies with an interactive UI.
 
 🚀 Features
+
 🔍 Search Movies by title using the OMDb API
 🎞 Dynamic Results Rendering with posters and details
 📊 Sorting Options
@@ -13,25 +14,22 @@ Genre, Actors, Runtime, Plot, IMDb Rating
 🖼 Poster Fallback Handling (for missing images)
 ⚡ Fast & Responsive UI
 📱 Fully Responsive Design
+
 🛠 Tech Stack
+
 HTML5
 CSS3
 JavaScript (Vanilla JS)
 OMDb API
-📸 Screenshots
 
-Add screenshots here (recommended)
-
-Example:
-
-![Home](./screenshots/home.png)
-![Results](./screenshots/results.png)
-![Modal](./screenshots/modal.png)
 ⚙️ Setup & Usage
+
 Clone the repository:
 git clone https://github.com/YOUR_USERNAME/cine-search.git
+
 Navigate into the folder:
 cd cine-search
+
 Open index.html in your browser
 🔑 API Key
 
@@ -43,11 +41,13 @@ Get your free API key here:
 Replace it in your JavaScript file:
 
 const apiKey = "YOUR_API_KEY";
+
 🌐 Live Demo
 
-👉 Add your deployed link here (Netlify / GitHub Pages)
+👉 https://cinesearch-gosling.netlify.app/
 
 ✨ Future Improvements
+
 ⭐ Add favorites/watchlist
 🔄 Pagination for large results
 🎯 Advanced filters (genre, rating)
@@ -62,5 +62,5 @@ This project is open-source and available under the MIT License.
 
 💡 Author
 
-Built by [Your Name]
+Built by Yuvraj Sabale
 🚀 Learning frontend development step by step
