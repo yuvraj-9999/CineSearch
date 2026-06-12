@@ -2,6 +2,10 @@
 
 A responsive movie search web application powered by the OMDb API that allows users to search, sort, and explore movies with an interactive UI.
 
+**Note:**
+The OMDb API key is exposed in the client because this is a frontend-only educational project.
+In a production environment I would move API requests behind a backend service or serverless function and store the key in environment variables.
+
 🚀 Features
 
 🔍 Search Movies by title using the OMDb API
@@ -25,7 +29,7 @@ OMDb API
 ⚙️ Setup & Usage
 
 Clone the repository:
-git clone https://github.com/YOUR_USERNAME/cine-search.git
+git clone https://github.com/yuvraj-999/cine-search.git
 
 Navigate into the folder:
 cd cine-search
